@@ -1,7 +1,8 @@
 from django.urls import path
-from cafeteria.views import index
+from cafeteria.views import *
 
 urlpatterns = [
-    path('', index)
-
+    path('', index),
+    path('imagem/', imagem),
+    path('imagem.html', imagem)
 ]

@@ -3,3 +3,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'cafeteria/index.html')
+
+def imagem(request):
+    return render(request, 'cafeteria/imagem.html')
