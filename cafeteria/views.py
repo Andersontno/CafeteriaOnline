@@ -1,18 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from cafeteria.models import Produto
 # Create your views here.
 
-def index(request):
+def index(request): 
+    produto = Produto.objects.all()
+    return render(request, 'cafeteria/index.html', {"cards": produto})
 
-    dados = {
-        1:{"Nome": "Cafe Expresso",
-        "legenda": "Café Preto"},
-        2:{"Nome": "Cafezão",
-        "legenda": "Café Grande "},
-        3:{"Nome": "Cafezin",
-        "legenda": "Café Pequeno "},
-    }
-    
-    return render(request, 'cafeteria/index.html', {"cards": dados})
-
-def imagem(request):
-    return render(request, 'cafeteria/imagem.html')
+def imagem(request, imagem_id):
+    produto = get_object_or_404(Produto, pk=imagem_id)
+    return render(request, 'cafeteria/imagem.html', {"produto": produto})

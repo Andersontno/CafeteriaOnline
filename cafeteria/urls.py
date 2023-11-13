@@ -3,5 +3,5 @@ from cafeteria.views import *
 
 urlpatterns = [
     path('', index, name = "index"),
-    path('imagem/', imagem, name = "imagem"),
+    path('imagem/<int:imagem_id>', imagem, name = "imagem"),
 ]
