@@ -1,3 +1,9 @@
 from django.contrib import admin
+from cafeteria.models import Produto
 
-# Register your models here.
+class ListandoProdutos(admin.ModelAdmin):
+    list_display = ("id", "denominacao", "legenda")
+    list_display_links = ("id", "denominacao")
+    search_fields = ("id", "denominacao")
+
+admin.site.register(Produto, ListandoProdutos)
