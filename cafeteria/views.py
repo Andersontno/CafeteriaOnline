@@ -3,7 +3,7 @@ from cafeteria.models import Produto
 # Create your views here.
 
 def index(request): 
-    produto = Produto.objects.filter(publicada=True)
+    produto = Produto.objects.order_by("-data_criacao").filter(publicada=True)
     return render(request, 'cafeteria/index.html', {"cards": produto})
 
 def imagem(request, imagem_id):

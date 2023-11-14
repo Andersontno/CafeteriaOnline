@@ -1,5 +1,6 @@
 from django.db import models
 
+from datetime import datetime
 # Create your models here.
 class Produto(models.Model):
 
@@ -16,6 +17,7 @@ class Produto(models.Model):
     descricao = models.TextField(null=False, blank=False)
     imagem = models.CharField(max_length=100, null= False, blank=False)
     publicada = models.BooleanField(default=False)
+    data_criacao = models.DateTimeField(default=datetime.now, blank=False)
 
     def __str__(self):
         return f"Produto [denominacao={self.denominacao}]"
