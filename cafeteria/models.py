@@ -15,6 +15,7 @@ class Produto(models.Model):
     categoria = models.CharField(max_length=100, choices=OPCOES_CATEGORIA, default="")
     descricao = models.TextField(null=False, blank=False)
     imagem = models.CharField(max_length=100, null= False, blank=False)
+    publicada = models.BooleanField(default=False)
 
     def __str__(self):
         return f"Produto [denominacao={self.denominacao}]"
