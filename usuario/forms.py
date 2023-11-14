@@ -70,3 +70,12 @@ class CadastroForms(forms.Form):
         )
     )
      
+    def clean_nome(self):
+        nome = self.cleaned_data.get('nome')
+
+        if nome:
+            nome = nome.strip()
+            if " " in nome:
+                raise forms.ValidationError('Não é permitido inserir espaço no campo de usuário')
+            else:
+                return nome
