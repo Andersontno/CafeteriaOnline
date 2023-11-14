@@ -1,6 +1,7 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 from datetime import datetime
+
 # Create your models here.
 class Produto(models.Model):
 
@@ -18,6 +19,13 @@ class Produto(models.Model):
     imagem = models.ImageField(upload_to="imagens/produto/", blank=True)
     publicada = models.BooleanField(default=False)
     data_criacao = models.DateTimeField(default=datetime.now, blank=False)
+    usuario = models.ForeignKey(
+        to=User
+        ,on_delete=models.SET_NULL
+        ,null=True
+        ,blank=False
+        ,related_name="user"
+    )
 
     def __str__(self):
         return self.denominacao
