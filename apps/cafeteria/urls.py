@@ -1,5 +1,5 @@
 from django.urls import path
-from cafeteria.views import *
+from apps.cafeteria.views import *
 
 urlpatterns = [
     path('', index, name = "index"),

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cafeteria.models import Produto
+from apps.cafeteria.models import Produto
 
 class ListandoProdutos(admin.ModelAdmin):
     list_display = ("id", "denominacao", "categoria", "legenda", "publicada")
