@@ -1,11 +1,13 @@
 from django.shortcuts import render
+from usuario.forms import LoginForms, CadastroForms
 
 def login(request):
-    return render(request, 'usuario/login.html')
-
+    form = LoginForms()
+    return render(request, 'usuario/login.html', {"form":form})
 
 def cadastro(request):
-    return render(request, 'usuario/cadastro.html')
+    form = CadastroForms()
+    return render(request, 'usuario/cadastro.html', {"form":form})
 
 
 def logout(request):
