@@ -76,6 +76,6 @@ class CadastroForms(forms.Form):
         if nome:
             nome = nome.strip()
             if " " in nome:
-                raise forms.ValidationError('Não é permitido inserir espaço no campo de usuário')
+                raise forms.ValidationError('Não é permitido ter espaços')
             else:
                 return nome
