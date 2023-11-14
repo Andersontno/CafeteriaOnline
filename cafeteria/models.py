@@ -8,6 +8,7 @@ class Produto(models.Model):
         ,("CAPPUCCINO", "Cappuccino")
         ,("ROBUSTA", "Café Robusta")
         ,("EXTRAFORTE", "Café Extra Forte")
+        ,("COMIDA", "Refeições")
     ]
     denominacao = models.CharField(max_length=100, null= False, blank=False)
     legenda = models.CharField(max_length=100, null= False, blank=False)
