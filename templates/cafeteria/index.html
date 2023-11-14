@@ -22,21 +22,25 @@
                         <ul class="cards__lista">
                             {% if cards %}
                                 {% for produto in cards %}
-                                <li class="card">
-                                    <a href="{% url 'imagem' produto.id %}">
-                                        <img class="card__imagem" src="{% static '/assets/imagens/galeria/'%}{{produto.imagem}}" alt="foto">
-                                    </a>
-                                    <span class="card__tag">Estrelas</span>
-                                    <div class="card__info">
-                                        <p class="card__titulo">{{produto.denominacao}}</p>
-                                        <div class="card__texto">
-                                            <p class="card__descricao">{{produto.legenda}}</p>
-                                            <span>
-                                                <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                            </span>
+                                    <li class="card">
+                                        <a href="{% url 'imagem' produto.id %}">
+                                            {% if produto.imagem == "" or produto.imagem == null %}
+                                                <img class="card__imagem" src="{% static '/assets/imagens/galeria/ImageNotFound.jpg'%}" alt="foto">
+                                            {% else %}
+                                                <img class="card__imagem" src="{{ produto.imagem.url }}" alt="foto">
+                                            {% endif %}
+                                        </a>
+                                        <span class="card__tag">Estrelas</span>
+                                        <div class="card__info">
+                                            <p class="card__titulo">{{produto.denominacao}}</p>
+                                            <div class="card__texto">
+                                                <p class="card__descricao">{{produto.legenda}}</p>
+                                                <span>
+                                                    <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
                                 {% endfor %}
                             {% else %}
                             {% endif %}    
