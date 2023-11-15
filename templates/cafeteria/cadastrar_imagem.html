@@ -3,7 +3,7 @@
 {% block content %}
 
             <section class="galeria" style="margin-left: 5em">
-                <form action="{% url 'cadastro' %}" method="POST">
+                <form action="{% url 'cadastrar_produto' %}" method="POST" enctype='multipart/form-data'>
                     {% csrf_token %} 
                     <div class="row">
                         {% for field in form.visible_fields %}
@@ -23,5 +23,6 @@
                     </div>
                 </form>
             </section>
+
 
 {% endblock %}

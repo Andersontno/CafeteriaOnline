@@ -17,7 +17,7 @@ class Produto(models.Model):
     categoria = models.CharField(max_length=100, choices=OPCOES_CATEGORIA, default="")
     descricao = models.TextField(null=False, blank=False)
     imagem = models.ImageField(upload_to="imagens/produto/", blank=True)
-    publicada = models.BooleanField(default=False)
+    publicada = models.BooleanField(default=True)
     data_criacao = models.DateTimeField(default=datetime.now, blank=False)
     usuario = models.ForeignKey(
         to=User

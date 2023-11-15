@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from apps.cafeteria.models import Produto
+from apps.cafeteria.forms import ProdutoForms
 # Create your views here.
 
 def index(request): 
@@ -28,3 +29,24 @@ def buscar(request):
             produto = produto.filter(denominacao__icontains=denominacao_a_buscar)
 
     return render(request, "cafeteria/buscar.html", {"produto": produto})
+
+def cadastrar_produto(request):
+    if not request.user.is_authenticated:
+        messages.error(request, "Usuário não logado!")        
+        return redirect('login')
+    
+    form = ProdutoForms
+    if request.method == 'POST':
+        form = ProdutoForms(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Novo produto cadastrado com sucesso!')
+            return redirect('index')
+    
+    return render(request, "cafeteria/cadastrar_imagem.html", {'form': form})
+
+def editar_produto(request):
+    pass
+
+def deletar_produto(request):
+    pass
