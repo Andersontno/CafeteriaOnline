@@ -43,7 +43,7 @@ def cadastrar_produto(request):
             messages.success(request, 'Novo produto cadastrado com sucesso!')
             return redirect('index')
     
-    return render(request, "cafeteria/cadastrar_imagem.html", {'form': form})
+    return render(request, "cafeteria/cadastrar_produto.html", {'form': form})
 
 def editar_produto(request):
     pass
