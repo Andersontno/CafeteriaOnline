@@ -22,11 +22,11 @@ class ProdutoForms(forms.ModelForm):
             'descricao': forms.Textarea(attrs={'class':'form-control'}),
             'imagem': forms.FileInput(attrs={'class':'form-control'}),
             'data_criacao': forms.DateInput(
-                #format='%d/#m/#Y', #Descobrir como mexer com essa formatação
-                attrs={'class': 'form-control', 
-                    'placeholder': 'Select a date',
-                    'type': 'date'
-                    }
+                format = '%d/%m/%Y',
+                attrs={
+                    'type':'date',
+                    'class':'form-control'
+                }
             ),            
             'usuario': forms.Select(attrs={'class':'form-control'}),
                                      
