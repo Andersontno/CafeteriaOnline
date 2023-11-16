@@ -57,5 +57,8 @@ def editar_produto(request, produto_id):
         
     return render(request, "cafeteria/editar_produto.html", {'form': form, 'produto_id': produto_id})
 
-def deletar_produto(request):
-    pass
+def deletar_produto(request, produto_id):
+    produto = Produto.objects.get(id = produto_id)
+    produto.delete()
+    messages.success(request, 'Produto deletado com sucesso!')
+    return redirect('index')        
