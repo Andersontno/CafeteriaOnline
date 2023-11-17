@@ -28,7 +28,7 @@ def buscar(request):
         if denominacao_a_buscar:
             produto = produto.filter(denominacao__icontains=denominacao_a_buscar)
 
-    return render(request, "cafeteria/buscar.html", {"produto": produto})
+    return render(request, "cafeteria/index.html", {"cards": produto})
 
 def cadastrar_produto(request):
     if not request.user.is_authenticated:
@@ -61,4 +61,9 @@ def deletar_produto(request, produto_id):
     produto = Produto.objects.get(id = produto_id)
     produto.delete()
     messages.success(request, 'Produto deletado com sucesso!')
-    return redirect('index')        
+    return redirect('index')      
+
+def filtro(request, categoria):
+    produto = Produto.objects.order_by("-data_criacao").filter(publicada=True, categoria = categoria)
+      
+    return render(request, 'cafeteria/index.html', {'cards': produto})

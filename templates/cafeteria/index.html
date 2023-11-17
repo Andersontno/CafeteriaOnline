@@ -10,10 +10,11 @@
                 <section class="tags">
                     <p class="tags__titulo">Busque por tags:</p>
                     <ul class="tags__lista">
-                        <li class="tags__tag">Nebulosa</li>
-                        <li class="tags__tag">Estrela</li>
-                        <li class="tags__tag">Galáxia</li>
-                        <li class="tags__tag">Planeta</li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'EXPRESSO' %}" class = "btn" style="color: #c9c9c9">Expresso</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'CAPPUCCINO' %}" class = "btn" style="color: #c9c9c9">Cappuccino</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'ROBUSTA' %}" class = "btn" style="color: #c9c9c9">Robusta</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'EXTRAFORTE' %}" class = "btn" style="color: #c9c9c9">Extra Forte</a></li>
+
                     </ul>
                 </section>
                 <section class="galeria">
