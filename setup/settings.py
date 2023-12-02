@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'djmoney',
+
     'apps.cafeteria.apps.CafeteriaConfig',
     'apps.usuario.apps.UsuarioConfig'
 ]
@@ -147,3 +150,7 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'success'
 
 }
+
+#Django-money configração
+CURRENCIES = ('BRL',)
+CURRENCY_CHOICES = [('BRL', 'Brasil (R$)'), ]
