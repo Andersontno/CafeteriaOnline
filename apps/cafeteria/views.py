@@ -10,11 +10,11 @@ def index(request):
         return redirect('login')
     
     produto = Produto.objects.order_by("-data_criacao").filter(publicada=True)
-    return render(request, 'cafeteria/index.html', {"cards": produto})
+    return render(request, 'cafeteria/index.html', {"produtos": produto})
 
-def imagem(request, imagem_id):
-    produto = get_object_or_404(Produto, pk=imagem_id)
-    return render(request, 'cafeteria/imagem.html', {"produto": produto})
+def produto(request, produto_id):
+    produto = get_object_or_404(Produto, pk=produto_id)
+    return render(request, 'cafeteria/produto.html', {"produto": produto})
 
 def buscar(request):
     if not request.user.is_authenticated:

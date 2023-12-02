@@ -21,10 +21,10 @@
                     <div class="cards">
                         <h2 class="cards__titulo">Navegue pela galeria</h2>
                         <ul class="cards__lista">
-                            {% if cards %}
-                                {% for produto in cards %}
+                            {% if produtos %}
+                                {% for produto in produtos %}
                                     <li class="card">
-                                        <a href="{% url 'imagem' produto.id %}">
+                                        <a href="{% url 'produto' produto.id %}">
                                             {% if produto.imagem == "" or produto.imagem == null %}
                                                 <img class="card__imagem" src="{% static '/assets/imagens/galeria/ImageNotFound.jpg'%}" alt="foto">
                                             {% else %}
