@@ -111,6 +111,11 @@ table {
     width: 500px;
 }
 
+.busca__input::placeholder {
+    color: #FFFFFF;
+    font-style: italic; 
+}
+
 .busca__icone {
     cursor: pointer;
     width: 2rem;
