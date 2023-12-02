@@ -28,7 +28,7 @@ def buscar(request):
         if denominacao_a_buscar:
             produto = produto.filter(denominacao__icontains=denominacao_a_buscar)
 
-    return render(request, "cafeteria/index.html", {"cards": produto})
+    return render(request, "cafeteria/index.html", {"produtos": produto})
 
 def cadastrar_produto(request):
     if not request.user.is_authenticated:
