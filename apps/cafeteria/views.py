@@ -66,4 +66,4 @@ def deletar_produto(request, produto_id):
 def filtro(request, categoria):
     produto = Produto.objects.order_by("-data_criacao").filter(publicada=True, categoria = categoria)
       
-    return render(request, 'cafeteria/index.html', {'cards': produto})
+    return render(request, 'cafeteria/index.html', {'produtos': produto})
