@@ -10,16 +10,16 @@
                 <section class="tags">
                     <p class="tags__titulo">Busque por tags:</p>
                     <ul class="tags__lista">
-                        <li class="tags__tag"><a href="{% url 'filtro' 'EXPRESSO' %}" class = "btn" style="color: #c9c9c9">Expresso</a></li>
-                        <li class="tags__tag"><a href="{% url 'filtro' 'CAPPUCCINO' %}" class = "btn" style="color: #c9c9c9">Cappuccino</a></li>
-                        <li class="tags__tag"><a href="{% url 'filtro' 'ROBUSTA' %}" class = "btn" style="color: #c9c9c9">Robusta</a></li>
-                        <li class="tags__tag"><a href="{% url 'filtro' 'EXTRAFORTE' %}" class = "btn" style="color: #c9c9c9">Extra Forte</a></li>
-
+                        <li class="tags__tag"><a href="{% url 'filtro' 'QUENTE' %}" class = "btn" style="color: #c9c9c9">Cafés quentes</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'GELADO' %}" class = "btn" style="color: #c9c9c9">Cafés Gelados</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'CHA' %}" class = "btn" style="color: #c9c9c9">Chás</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'PADARIA' %}" class = "btn" style="color: #c9c9c9">Padaria</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'REFEICAO' %}" class = "btn" style="color: #c9c9c9">Refeições</a></li>
                     </ul>
                 </section>
                 <section class="galeria">
                     <div class="cards">
-                        <h2 class="cards__titulo">Navegue pela galeria</h2>
+                        <h2 class="cards__titulo">Produtos disponíveis</h2>
                         <ul class="cards__lista">
                             {% if produtos %}
                                 {% for produto in produtos %}

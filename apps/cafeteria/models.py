@@ -6,11 +6,11 @@ from datetime import datetime
 class Produto(models.Model):
 
     OPCOES_CATEGORIA = [
-        ("EXPRESSO", "Café Expresso")
-        ,("CAPPUCCINO", "Cappuccino")
-        ,("ROBUSTA", "Café Robusta")
-        ,("EXTRAFORTE", "Café Extra Forte")
-        ,("COMIDA", "Refeições")
+        ("QUENTE", "Cafés quentes")
+        ,("GELADO", "Cafés Gelados")
+        ,("CHA", "Chás")
+        ,("PADARIA", "Padaria")
+        ,("REFEICAO", "Refeições")
     ]
     denominacao = models.CharField(max_length=100, null= False, blank=False)
     legenda = models.CharField(max_length=100, null= False, blank=False)
