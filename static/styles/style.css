@@ -116,6 +116,14 @@ table {
     font-style: italic; 
 }
 
+.busca__input:focus {
+    color: #FFFFFF; 
+}
+
+.busca__input:active {
+    color: #FFFFFF;
+}
+
 .busca__icone {
     cursor: pointer;
     width: 2rem;
