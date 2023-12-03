@@ -1,7 +1,9 @@
 {% load static %}
 <div class="pagina-inicial">
     <header class="cabecalho">
-        <img src="{% static '/assets/logo/LogoCafezinOnline.png' %}" alt="Logo Cafeteria Online" />
+        <a href="{% url 'index' %}">
+            <img src="{% static '/assets/logo/LogoCafezinOnline.png' %}" alt="Logo Cafeteria Online" />
+        </a>
         {% include "partials/_alertas.html" %}    
         {% if user.is_authenticated %}
             <div class="cabecalho__busca">
