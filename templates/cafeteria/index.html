@@ -4,8 +4,8 @@
 
             <section class="conteudo">
                 <section class="banner">
-                    <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
-                    <h1 class="banner__titulo"> A melhor e mais completa cafeteria do mundo!</h1>
+                    <img class="banner__imagem" src="{% static '/assets/imagens/Banner_1156x328.png' %}" alt="banner Alura Space">
+                    {% comment %} <h1 class="banner__titulo"> A melhor e mais completa cafeteria do mundo!</h1> {% endcomment %}
                 </section>
                 <section class="tags">
                     <p class="tags__titulo">Busque por tags:</p>
@@ -31,14 +31,10 @@
                                                 <img class="card__imagem" src="{{ produto.imagem.url }}" alt="foto">
                                             {% endif %}
                                         </a>
-                                        <span class="card__tag">Estrelas</span>
                                         <div class="card__info">
                                             <p class="card__titulo">{{produto.denominacao}}</p>
                                             <div class="card__texto">
                                                 <p class="card__descricao">{{produto.legenda}}</p>
-                                                <span>
-                                                    <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                                </span>
                                             </div>
                                         </div>
                                     </li>
