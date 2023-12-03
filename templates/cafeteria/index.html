@@ -5,7 +5,6 @@
             <section class="conteudo">
                 <section class="banner">
                     <img class="banner__imagem" src="{% static '/assets/imagens/Banner_1156x328.png' %}" alt="banner Alura Space">
-                    {% comment %} <h1 class="banner__titulo"> A melhor e mais completa cafeteria do mundo!</h1> {% endcomment %}
                 </section>
                 <section class="tags">
                     <p class="tags__titulo">Busque por tags:</p>
@@ -26,7 +25,7 @@
                                     <li class="card">
                                         <a href="{% url 'produto' produto.id %}">
                                             {% if produto.imagem == "" or produto.imagem == null %}
-                                                <img class="card__imagem" src="{% static '/assets/imagens/galeria/ImageNotFound.jpg'%}" alt="foto">
+                                                <img class="card__imagem" src="{% static '/assets/imagens/ImageNotFound.jpg'%}" alt="foto">
                                             {% else %}
                                                 <img class="card__imagem" src="{{ produto.imagem.url }}" alt="foto">
                                             {% endif %}
